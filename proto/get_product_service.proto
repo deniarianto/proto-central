@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package store;
+option go_package = "com/golang/learn/store/service";
+
+message productRequest {
+  string id = 1;
+}
+
+message productResponse {
+  string name = 1;
+  int64 price = 2;
+}
+
+service ProductService {
+  rpc get(productRequest) returns (productResponse) {};
+}
