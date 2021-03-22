@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package store;
+option go_package = "com/golang/learn/store/service";
+
+message calculationRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message calculationResponse {
+  int32 result = 1;
+}
+
+service CalculationService {
+  rpc add(calculationRequest) returns (calculationResponse) {};
+  rpc multiply(calculationRequest) returns (calculationResponse) {};
+}
